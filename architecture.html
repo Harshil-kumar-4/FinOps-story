@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecture Explorer — Intelligent Cloud Economics Control Plane</title>
+  <meta name="description" content="Interactive architecture map exploring 54 canonical components, 8 architectural areas, 84 governed relationships, and 3 core operational workflows.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="explorer-body">
+
+  <!-- Explorer Header -->
+  <header class="explorer-header">
+    <div class="explorer-brand-group">
+      <a class="nav-brand" href="index.html">
+        <span class="nav-brand-dot"></span>
+        <span class="explorer-title">Architecture Explorer</span>
+      </a>
+      <span class="explorer-stats-pill" id="stats-pill">54 Components • 8 Areas • 84 Edges • 3 Workflows</span>
+    </div>
+
+    <!-- Search Input -->
+    <div class="explorer-search-box">
+      <span class="explorer-search-icon" aria-hidden="true">🔍</span>
+      <input id="q" class="explorer-search-input" type="search" list="ql" placeholder="Search 54 components (e.g. Nexus, Plumb, Orchestrator)..." aria-label="Search components">
+      <datalist id="ql"></datalist>
+    </div>
+
+    <div class="nav-links" style="display: flex;">
+      <a href="index.html" class="btn-tool" style="font-weight: 600;">← Back to Product Story</a>
+      <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn-tool" style="color: var(--forest); font-weight: 600;">About Me ↗</a>
+    </div>
+  </header>
+
+  <!-- Filter & Workflow Sub-Toolbar -->
+  <div class="explorer-toolbar" role="toolbar" aria-label="Explorer Controls">
+    <div class="toolbar-group" id="views" role="group" aria-label="System Views">
+      <!-- Populated via app.js -->
+    </div>
+    
+    <div class="toolbar-group" id="wf" role="group" aria-label="Workflow Traces">
+      <!-- Populated via app.js -->
+    </div>
+
+    <div class="toolbar-group" id="filters" role="group" aria-label="Status Filters">
+      <!-- Populated via app.js -->
+    </div>
+
+    <div class="toolbar-group" id="mode-filters" role="group" aria-label="Execution Mode Filters">
+      <!-- Populated via app.js -->
+    </div>
+
+    <div class="toolbar-group" id="canvas-controls" role="group" aria-label="Canvas Zoom and Navigation">
+      <span class="toolbar-label">CANVAS:</span>
+      <button id="btn-zoom-in" class="btn-tool" aria-label="Zoom In" title="Zoom In (+)">🔍+</button>
+      <button id="btn-zoom-out" class="btn-tool" aria-label="Zoom Out" title="Zoom Out (−)">🔍−</button>
+      <button id="btn-fit-view" class="btn-tool" aria-label="Fit to View" title="Fit Entire Architecture Map">Fit ⛶</button>
+      <button id="btn-reset-view" class="btn-tool" aria-label="Reset View" title="Reset Zoom (100%)">Reset ⊙</button>
+      <button id="btn-toggle-edges" class="btn-tool active" aria-label="Toggle Connectors" title="Toggle Connection Lines">Edges: ON</button>
+    </div>
+
+    <div class="toolbar-group">
+      <button id="btn-fullscreen" class="btn-tool" aria-label="Toggle Fullscreen" title="Toggle Fullscreen" style="font-weight: 700; color: var(--forest);">⛶ Fullscreen</button>
+      <button id="btn-legend" class="btn-tool" aria-label="Toggle Legend">Legend ℹ️</button>
+    </div>
+  </div>
+
+  <!-- Main Viewport Area -->
+  <main class="explorer-main">
+    <section class="explorer-stage" id="stage" aria-label="Architecture Topology Canvas">
+      <button id="stage-fullscreen-btn" class="stage-floating-fs-btn" aria-label="Toggle Fullscreen" title="Toggle Fullscreen">⛶ Fullscreen</button>
+      
+      <!-- Stage Canvas Wrapper (Supports Pan & Zoom) -->
+      <div id="arch-viewport" class="arch-viewport">
+        <div id="arch-canvas" class="arch-canvas">
+          <!-- Dynamic SVG Vector Connectors Layer -->
+          <svg id="arch-svg-edges" class="arch-svg-edges" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <defs id="svg-defs"></defs>
+            <g id="svg-edges-group"></g>
+            <g id="svg-labels-group"></g>
+          </svg>
+
+          <!-- Spatial Architectural Map Layout -->
+          <div id="arch-flow-stage" class="arch-flow-stage">
+            <!-- Populated dynamically via app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Workflow Playback Bar (Hidden until a workflow is active) -->
+      <div id="wf-player-bar" class="workflow-player" style="display: none;">
+        <span class="mono" style="font-size: 0.75rem; color: #52B788;">TRACE:</span>
+        <div id="wf-ticker-text" class="wf-ticker">Workflow step...</div>
+        <div style="display: flex; gap: 6px;">
+          <button id="wf-prev-step" class="wf-player-btn" aria-label="Previous Workflow Step">Prev</button>
+          <button id="wf-play-toggle" class="wf-player-btn" aria-label="Play or Pause Trace">Pause</button>
+          <button id="wf-next-step" class="wf-player-btn" aria-label="Next Workflow Step">Next</button>
+          <button id="wf-exit-btn" class="wf-player-btn" style="background: rgba(220,53,69,0.3); border-color: rgba(220,53,69,0.5);" aria-label="Exit Trace">Exit</button>
+        </div>
+      </div>
+
+      <!-- Non-Blocking Graph Legend Popover -->
+      <div class="legend-popover" id="legend-popover" role="dialog" aria-label="Architecture Diagram Legend" aria-hidden="true">
+        <div class="legend-header">
+          <span class="legend-title">Architecture Legend</span>
+          <button class="legend-close" id="btn-legend-close" aria-label="Close Legend">&times;</button>
+        </div>
+        <div class="legend-body" id="legend-body">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Inspector Drawer -->
+    <aside class="explorer-inspector" id="inspector" aria-live="polite">
+      <!-- Populated dynamically via app.js -->
+    </aside>
+  </main>
+
+  <!-- Single Source of Truth Scripts -->
+  <script src="architecture-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

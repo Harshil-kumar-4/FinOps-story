@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intelligent Cloud Economics Control Plane — Product Experience</title>
+  <meta name="description" content="Moving beyond passive cloud cost visibility toward evidence-driven, production-aware, reliability-constrained cloud economics.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Persistent Floating Navigation with Compact Dropdown -->
+  <header class="nav-header">
+    <a class="nav-brand" href="#top">
+      <span class="nav-brand-dot"></span>
+      <span>Cloud Economics Control Plane</span>
+    </a>
+    
+    <div class="nav-right-cluster">
+      <a href="architecture.html" class="nav-cta">
+        <span>Explore Architecture</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="nav-portfolio">
+        <span>About Me</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <button id="nav-dropdown-toggle" class="nav-menu-btn" aria-expanded="false" aria-controls="nav-dropdown-menu" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+        <span class="nav-arrow" aria-hidden="true">▾</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Glassmorphic Spatial Dropdown Menu -->
+  <nav id="nav-dropdown-menu" class="nav-dropdown" aria-label="Site Navigation Menu">
+    <div class="nav-dropdown-header">
+      <span class="nav-dropdown-title">System Directory</span>
+      <button id="nav-dropdown-close" class="nav-dropdown-close" aria-label="Close navigation menu">×</button>
+    </div>
+
+    <div class="nav-dropdown-sections">
+      <div class="nav-dropdown-col">
+        <div class="nav-dropdown-category">Product Narrative</div>
+        <a href="#problem" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">01. Problem & 4 Gaps</span>
+          <span class="nav-dropdown-desc">Fragmented telemetry & operational silos</span>
+        </a>
+        <a href="#lifecycle" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">02. Decision Lifecycle</span>
+          <span class="nav-dropdown-desc">The 9-stage closed-loop engine</span>
+        </a>
+        <a href="#model" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">03. Operating Model</span>
+          <span class="nav-dropdown-desc">AI reasons, Det calculates, Policy gates</span>
+        </a>
+        <a href="#agents" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">04. Domain Agents</span>
+          <span class="nav-dropdown-desc">7 specialized collaborative agents</span>
+        </a>
+      </div>
+
+      <div class="nav-dropdown-col">
+        <div class="nav-dropdown-category">Verification & Strategy</div>
+        <a href="#differentiators" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">05. Differentiators</span>
+          <span class="nav-dropdown-desc">8 production-grade principles</span>
+        </a>
+        <a href="#value" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">06. Value Realization</span>
+          <span class="nav-dropdown-desc">Operational safety & approval multipliers</span>
+        </a>
+        <a href="#simulator" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">07. Sizing Simulator</span>
+          <span class="nav-dropdown-desc">Interactive Azure VM walkthrough</span>
+        </a>
+        <a href="#roadmap" class="nav-dropdown-item">
+          <span class="nav-dropdown-label">08. Evolution & Inquiries</span>
+          <span class="nav-dropdown-desc">5-phase roadmap & design decisions</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown-footer">
+      <a href="architecture.html" class="nav-dropdown-cta-link primary">Launch Architecture Explorer (54 Nodes) →</a>
+      <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="nav-dropdown-cta-link secondary">Portfolio ↗</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- ====================================================================
+         SECTION 1: HERO
+         ==================================================================== -->
+    <section class="hero-section">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-content">
+        <div class="hero-badge spatial-reveal">
+          A Concept in Development with a Grounded Prototype
+        </div>
+        <h1 class="hero-title spatial-reveal">
+          From passive cost visibility to <span>evidence-driven decisions.</span>
+        </h1>
+        <p class="hero-subtitle spatial-reveal">
+          Knowing where cloud spend goes is not the same as knowing what should safely change. This platform concept connects financial cost, infrastructure telemetry, application health, policy constraints, and human governance into a unified, closed-loop decision lifecycle.
+        </p>
+        <div class="hero-actions spatial-reveal">
+          <a href="architecture.html" class="btn-spatial btn-primary">
+            <span>Explore Architecture Explorer</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#problem" class="btn-spatial btn-secondary">
+            <span>Follow the Product Story</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn-spatial btn-secondary">
+            <span>About Me</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Spatial Key Metrics Ribbon -->
+        <div class="hero-ribbon spatial-reveal">
+          <div class="hero-stat-card">
+            <div class="hero-stat-num">01 / The Friction</div>
+            <div class="hero-stat-label">89% Rejected</div>
+            <p class="hero-stat-desc">Traditional FinOps recommendations are dismissed by SREs due to lack of application error and latency context.</p>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-num">02 / The Architecture</div>
+            <div class="hero-stat-label">9-Stage Closed Loop</div>
+            <p class="hero-stat-desc">From continuous background signal synthesis to GitOps remediation and 30-day post-change outcome verification.</p>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-num">03 / The Implementation</div>
+            <div class="hero-stat-label">Hybrid Intelligence</div>
+            <p class="hero-stat-desc">AI reasons over intent and exception logs; deterministic engines compute arithmetic and constraint solvers; policy gates enforce safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: THE PROBLEM & 4 CORE ARCHITECTURAL GAPS
+         ==================================================================== -->
+    <section class="section-story" id="problem">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">The Operational Reality</div>
+          <h2>Cost is visible. Context is fragmented. Low utilization is an ambiguous signal.</h2>
+          <p class="lead text-muted">
+            Billing invoices, inventory catalogues, performance metrics, application logs, deployments, and business ownership sit in disconnected silos across different teams. A downsize without error or latency checks causes production outages, not just missed savings.
+          </p>
+        </div>
+
+        <!-- Interactive Spatial Signal Convergence Scene -->
+        <div class="convergence-wrapper" id="convergence-pin">
+          <div class="convergence-sticky">
+            <div class="convergence-scene" id="convergence-scene">
+              <div class="signal-chip" id="chip-cost" style="--tx: -340px; --ty: -180px;">Cost & Billing Invoices</div>
+              <div class="signal-chip" id="chip-inv" style="--tx: 320px; --ty: -170px;">Resource Inventory & Tags</div>
+              <div class="signal-chip" id="chip-met" style="--tx: -380px; --ty: 140px;">P95/P99 Performance Metrics</div>
+              <div class="signal-chip" id="chip-log" style="--tx: 360px; --ty: 130px;">Application Exception Logs (KQL)</div>
+              <div class="signal-chip" id="chip-pol" style="--tx: 0px; --ty: -210px;">Business Policy & Freeze Windows</div>
+              <div class="signal-chip" id="chip-dep" style="--tx: -20px; --ty: 200px;">Deployments & Topology Graph</div>
+
+              <div class="signal-core" id="convergence-core">
+                <span class="signal-core-badge">Intelligent Synthesis</span>
+                <div class="signal-core-title">One Decision Context</div>
+                <p class="signal-core-sub">Connecting financial cost with infrastructure behaviour, operational health, and policy boundaries.</p>
+              </div>
+
+              <div class="convergence-caption">
+                <div class="convergence-scrubber-box">
+                  <label for="conv-slider" class="convergence-slider-label">Interactive Telemetry Scrubber</label>
+                  <input type="range" id="conv-slider" class="convergence-slider" min="0" max="100" value="0" aria-label="Simulate Telemetry Convergence">
+                </div>
+                <div class="convergence-caption-status">
+                  <span id="convergence-status-text">Scroll or scrub slider to converge disparate telemetry into unified context</span>
+                  <span id="convergence-progress-text">0% Converged</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 4 Core Architectural Gaps -->
+        <div class="editorial-header spatial-reveal" style="margin-top: 60px;">
+          <div class="tagline">Root Cause Analysis</div>
+          <h2>The Four Architectural Gaps of Legacy FinOps</h2>
+        </div>
+        <div class="gaps-grid" id="gaps-container">
+          <!-- Populated dynamically via story.js from ARCH.gaps -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: THE OPPORTUNITY & CORE THESIS
+         ==================================================================== -->
+    <section class="section-story section-dark" id="thesis">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">The Product Thesis</div>
+          <h2>Evidence-driven, production-aware, reliability-constrained cloud economics.</h2>
+          <p class="lead">
+            Proposing a change is only half the problem. A true control plane must evaluate production safety, obtain human approval, prepare GitOps infrastructure diffs, and verify actual billing invoices and SRE telemetry 30 days post-change.
+          </p>
+        </div>
+
+        <div class="hero-ribbon spatial-reveal" style="border-top-color: var(--dark-border);">
+          <div class="hero-stat-card" style="background: var(--dark-card); border-color: var(--dark-border);">
+            <div class="hero-stat-num">Core Shift 01</div>
+            <div class="hero-stat-label" style="color: #FFFFFF;">Signals Prepared Once</div>
+            <p class="hero-stat-desc" style="color: var(--dark-text-muted);">Background engines compute statistical rollups continuously, so reasoning agents read compact, precomputed summaries instead of flooding LLM context windows.</p>
+          </div>
+          <div class="hero-stat-card" style="background: var(--dark-card); border-color: var(--dark-border);">
+            <div class="hero-stat-num">Core Shift 02</div>
+            <div class="hero-stat-label" style="color: #FFFFFF;">Safe 'Do Nothing' Outcome</div>
+            <p class="hero-stat-desc" style="color: var(--dark-text-muted);">Treating 'Do Nothing' as a successful, high-value result when operational evidence indicates intentional headroom or application instability.</p>
+          </div>
+          <div class="hero-stat-card" style="background: var(--dark-card); border-color: var(--dark-border);">
+            <div class="hero-stat-num">Core Shift 03</div>
+            <div class="hero-stat-label" style="color: #FFFFFF;">Verified Learning Loop</div>
+            <p class="hero-stat-desc" style="color: var(--dark-text-muted);">Auditing realized outcomes against predictions to calibrate confidence scoring models over time based on historical truth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: THE 9-STAGE DECISION LIFECYCLE
+         ==================================================================== -->
+    <section class="section-story" id="lifecycle">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">The Operational Engine</div>
+          <h2>The Nine-Stage Decision Lifecycle</h2>
+          <p class="lead text-muted">
+            <strong>Why nine stages instead of a 1-step alert?</strong> Traditional tools fail because they jump from raw CPU utilization directly to an automated alert in a single step—causing broken workloads, alert fatigue, and ignored tickets.
+          </p>
+          <p class="text-muted" style="font-size: 0.95rem; margin-top: 10px; max-width: 780px;">
+            A production-grade control plane requires a closed-loop chain of custody: raw signals are synthesized into operational context, reasoned into candidate actions, passed through strict safety filters, formally decided, governed through GitOps pull requests, executed with rollbacks, tracked for 30-day runtime stability, and audited against billing invoices to calibrate future decisions.
+          </p>
+        </div>
+
+        <div class="lifecycle-layout spatial-reveal">
+          <div class="lifecycle-track" id="lifecycle-track" role="tablist" aria-label="Decision Lifecycle Stages">
+            <!-- Stage buttons generated dynamically via story.js -->
+          </div>
+          <div class="stage-panel" id="lifecycle-panel" aria-live="polite">
+            <!-- Dynamic stage content injected via story.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: OPERATING MODEL & HYBRID ARCHITECTURE
+         ==================================================================== -->
+    <section class="section-story section-dark" id="model">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">Engineering Rigor</div>
+          <h2>AI Reasons. Deterministic Systems Calculate. Policies Control.</h2>
+          <p class="lead">
+            The platform pairs each system to its mathematical strengths. AI should never calculate billing arithmetic or constraint satisfaction; deterministic code should never interpret ambiguous incident logs.
+          </p>
+        </div>
+
+        <div class="pillars-grid spatial-reveal">
+          <div class="pillar-card ai">
+            <div class="pillar-icon">AI</div>
+            <h3>Cognitive Reasoning Layer</h3>
+            <p>Interpreting natural language intent, synthesizing application exception logs (KQL), proposing metric schemas for unknown resource types, and explaining decisions to engineers.</p>
+            <ul class="pillar-list">
+              <li>Natural Language Intent Parsing</li>
+              <li>Just-In-Time Exception Log Triage</li>
+              <li>Schema Inference for Unfamiliar Resources</li>
+              <li>Plain-Language Rationale Generation</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card det">
+            <div class="pillar-icon">DET</div>
+            <h3>Deterministic Calculation Engines</h3>
+            <p>Precise mathematical algorithms, statistical percentiles (P95/P99), cloud provider pricing matrixes, time-series forecasting, and linear commitment constraint solvers.</p>
+            <ul class="pillar-list">
+              <li>P95 / P99 Metric Aggregations</li>
+              <li>Retail Pricing API Calculations</li>
+              <li>Time-Series Trend & Seasonality Forecasting</li>
+              <li>Linear Programming Solver (Simplex/Interior)</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card gov">
+            <div class="pillar-icon">GOV</div>
+            <h3>Safety & Governance Controls</h3>
+            <p>Tenant isolation, least-privilege cloud provider adapters, human approval gateways, policy violation detection, and tamper-evident audit logging.</p>
+            <ul class="pillar-list">
+              <li>Human-in-the-Loop Approval Gateway</li>
+              <li>Strict Read-Only Observation Defaults</li>
+              <li>GitOps Pull Request Generation (IaC)</li>
+              <li>Post-Change Outcome Verification (30-day)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: THE 7 DOMAIN AGENTS
+         ==================================================================== -->
+    <section class="section-story" id="agents">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">Modular Specialization</div>
+          <h2>Seven Domain Agents on a Shared Platform Foundation</h2>
+          <p class="lead text-muted">
+            Rather than a monolithic assistant, the platform employs specialized domain agents that collaborate through shared tools, precomputed signals, and governance policies.
+          </p>
+        </div>
+
+        <div class="agents-layout spatial-reveal">
+          <div class="agents-nav" id="agents-nav" role="tablist" aria-label="Domain Agents">
+            <!-- Populated via story.js -->
+          </div>
+          <div class="agent-card" id="agent-display" aria-live="polite">
+            <!-- Dynamic agent detail injected via story.js -->
+          </div>
+        </div>
+
+        <div style="margin-top: 32px; text-align: center;" class="spatial-reveal">
+          <a href="architecture.html" class="btn-spatial btn-secondary">
+            <span>Explore all 54 components in the Architecture Explorer</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: ARCHITECTURAL DIFFERENTIATORS
+         ==================================================================== -->
+    <section class="section-story section-dark" id="differentiators">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">Design Innovations</div>
+          <h2>Eight Architectural Principles Built for Production Trust</h2>
+          <p class="lead">
+            Addressing the foundational weaknesses of prior generation FinOps tools through rigorous systems design.
+          </p>
+        </div>
+
+        <div class="diff-grid spatial-reveal" id="diff-container">
+          <!-- Populated dynamically via story.js from ARCH.differentiators -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: BUSINESS VALUE REALIZATION FRAMEWORK
+         ==================================================================== -->
+    <section class="section-story" id="value">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">Economic Mathematics</div>
+          <h2>The Value Realization Gap: Why Most Cloud Savings Fail</h2>
+          <p class="lead text-muted">
+            Traditional tools report millions in theoretical savings that are never realized because engineers do not trust automated suggestions without operational evidence.
+          </p>
+        </div>
+
+        <div class="value-box spatial-reveal">
+          <div class="formula-banner">
+            Realized Value = Addressable Spend × Theoretical Waste × Model Precision × Operational Safety Filter × Engineering Approval Rate × Execution Success Rate
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comparison-col legacy">
+              <div class="hero-stat-num">Traditional Passive FinOps</div>
+              <div class="comparison-stat">Low Realization Yield</div>
+              <div class="comparison-sub">High theoretical dashboard savings; near-zero engineering adoption</div>
+              
+              <div class="breakdown-bars">
+                <div class="bar-item">
+                  <div class="bar-label"><span>Theoretical Waste Detected</span><span>Unfiltered Dashboard Metric</span></div>
+                  <div class="bar-track"><div class="bar-fill red" style="width: 100%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Operational Safety Filter</span><span>0% (Blind to SRE Constraints)</span></div>
+                  <div class="bar-track"><div class="bar-fill red" style="width: 5%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Engineering Approval Rate</span><span>~10% (Alert Fatigue & Skepticism)</span></div>
+                  <div class="bar-track"><div class="bar-fill red" style="width: 12%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Realized Value Captured</span><span>Minimal (Unverified in Billing)</span></div>
+                  <div class="bar-track"><div class="bar-fill red" style="width: 10%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comparison-col control-plane">
+              <div class="hero-stat-num" style="color: var(--forest);">Intelligent Control Plane</div>
+              <div class="comparison-stat">High Conversion Yield</div>
+              <div class="comparison-sub">Engineered to systematically maximize conversion from detection to verified capture</div>
+
+              <div class="breakdown-bars">
+                <div class="bar-item">
+                  <div class="bar-label"><span>Theoretical Waste Detected</span><span>Contextually Synthesized</span></div>
+                  <div class="bar-track"><div class="bar-fill green" style="width: 100%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Operational Safety Filter</span><span>100% Pre-Filtered for Production</span></div>
+                  <div class="bar-track"><div class="bar-fill green" style="width: 95%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Engineering Approval Rate</span><span>High Trust via GitOps Evidence</span></div>
+                  <div class="bar-track"><div class="bar-fill green" style="width: 88%;"></div></div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label"><span>Realized Value Captured</span><span>Audited on 30-Day Invoices</span></div>
+                  <div class="bar-track"><div class="bar-fill green" style="width: 90%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multipliers Grid Highlight -->
+          <div class="multipliers-grid" style="margin-top: 30px;">
+            <div class="multiplier-card">
+              <div class="mult-badge">Safety First</div>
+              <h4 class="mult-title">Operational Safety Filter</h4>
+              <p class="mult-desc">
+                We eliminate unsafe downsizes before engineers ever see them. Background checks verify P99 memory headroom, exception logs via KQL, freeze windows, and recent deployments.
+              </p>
+            </div>
+            <div class="multiplier-card">
+              <div class="mult-badge">Frictionless Governance</div>
+              <h4 class="mult-title">Engineering Approval Rate</h4>
+              <p class="mult-desc">
+                Engineers reject alerts that lack evidence. We provide complete operational proof, blast-radius boundaries, and automated GitOps PRs ready for peer review.
+              </p>
+            </div>
+            <div class="multiplier-card">
+              <div class="mult-badge">Verified Outcomes</div>
+              <h4 class="mult-title">Realized Value Captured</h4>
+              <p class="mult-desc">
+                Moving beyond dashboard projections. The control plane monitors post-change runtime stability and reconciles actual billing data 30 days later to guarantee genuine value.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: INTERACTIVE RIGHTSIZING WALKTHROUGH SIMULATOR
+         ==================================================================== -->
+    <section class="section-story section-dark" id="simulator">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">Production Simulation</div>
+          <h2>Production Rightsizing in Action: Interactive Azure VM Walkthrough</h2>
+          <p class="lead">
+            Step through a simulated rightsizing candidate (<code class="mono">vm-checkout-worker-01</code>) from initial inventory discovery through JIT log verification, human approval, GitOps PR creation, and 30-day invoice outcome auditing.
+          </p>
+        </div>
+
+        <div class="simulator-container spatial-reveal">
+          <div class="simulator-header">
+            <div class="sim-status-title">
+              <span class="sim-pulse-dot"></span>
+              <span class="mono" style="color: #FFFFFF; font-weight: 600;">SIMULATION RUNNER — vm-checkout-worker-01</span>
+            </div>
+            <div class="sim-controls">
+              <button class="btn-sim" id="sim-prev-btn" aria-label="Previous Step">← Prev</button>
+              <button class="btn-sim active" id="sim-play-btn" aria-label="Play or Pause">Auto-Play</button>
+              <button class="btn-sim" id="sim-next-btn" aria-label="Next Step">Next →</button>
+              <button class="btn-sim" id="sim-reset-btn" aria-label="Reset Simulation">Reset</button>
+            </div>
+          </div>
+
+          <div class="sim-body">
+            <div class="sim-steps-list" id="sim-steps-nav">
+              <!-- Populated via story.js -->
+            </div>
+            <div class="sim-display" id="sim-display">
+              <!-- Populated dynamically via story.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10: EVOLUTION, ROADMAP & OPEN ARCHITECTURAL QUESTIONS
+         ==================================================================== -->
+    <section class="section-story" id="roadmap">
+      <div class="container">
+        <div class="editorial-header spatial-reveal">
+          <div class="tagline">System Evolution</div>
+          <h2>From Narrow Prototype to Multi-Cloud Autonomous Economics</h2>
+          <p class="lead text-muted">
+            The platform architecture is designed across five deliberate evolutionary phases, clearly delineating what has been built today from what is designed for target state.
+          </p>
+        </div>
+
+        <!-- 5-Phase Roadmap Timeline -->
+        <div class="roadmap-timeline spatial-reveal" id="roadmap-timeline">
+          <!-- Populated via story.js from ARCH.roadmapPhases -->
+        </div>
+
+        <!-- The 8 Open Architectural Questions Accordion -->
+        <div class="editorial-header spatial-reveal" style="margin-top: 40px;">
+          <div class="tagline">Strategic Architecture Decisions</div>
+          <h2>Open Architectural Questions & Design Decisions</h2>
+          <p class="lead text-muted">
+            Key trade-offs and structural questions documented in the reference architecture awaiting production validation.
+          </p>
+        </div>
+
+        <div class="questions-list spatial-reveal" id="questions-list">
+          <!-- Populated via story.js from ARCH.questions -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 11: CLOSING BUILDER'S THESIS & NAVIGATION
+         ==================================================================== -->
+    <section class="closing-section">
+      <div class="container closing-content spatial-reveal">
+        <h2 class="closing-title">Measure what happened after the decision.</h2>
+        <p class="closing-desc">
+          Cloud economics can become an autonomous, trusted decision plane that understands infrastructure behavior, protects application reliability, and verifies its own economic outcomes.
+        </p>
+        <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
+          <a href="architecture.html" class="btn-spatial btn-copper">
+            <span>Launch Complete Architecture Explorer</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn-spatial btn-secondary" style="background: transparent; color: #FFFFFF; border-color: rgba(234, 230, 220, 0.3);">
+            <span>Visit Portfolio</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-story">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#top">Back to Top</a>
+        <a href="architecture.html">Architecture Explorer (54 Components)</a>
+        <a href="https://harshil-kumar-4.github.io/portfolio/" target="_blank" rel="noopener noreferrer">About Me</a>
+      </div>
+      <p class="mono text-muted" style="margin: 0;">
+        Intelligent Cloud Economics Control Plane — Architectural Prototype & Concept Reference. Strictly grounded in Master Pitch and Component Catalogue specifications.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="architecture-data.js"></script>
+  <script src="story.js"></script>
+</body>
+</html>
